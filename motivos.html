@@ -6,7 +6,7 @@
     <title>Por que Eu Te Amo - Nosso 1º Ano</title>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -51,16 +51,29 @@
             </div>
         </section>
 
-        <section class="playlist-section">
+        <section class="countdown-section">
             <div class="container slide-up">
-                <h2>Nossa Trilha Sonora</h2>
-                <div class="playlist-container">
-                    <a href="https://open.spotify.com/playlist/6dAmRGE3190qJmETN8M2OM?si=a38e30c597464f2b&pt=721af24ec1b4906bc29207f1be1ca002" target="_blank" rel="noopener noreferrer" class="playlist-link-card">
-                        <img src="images/playlist-banner.jpg" alt="Link para a playlist 333 no Spotify">
-                        <div class="playlist-overlay">
-                            <span>Ouvir no Spotify</span>
-                        </div>
-                    </a>
+                <h2>Contagem Regressiva para o Nosso Momento</h2>
+                <div id="countdown" class="countdown-container">
+                    <div class="countdown-el">
+                        <span id="dias">00</span>
+                        <label>Dias</label>
+                    </div>
+                    <div class="countdown-el">
+                        <span id="horas">00</span>
+                        <label>Horas</label>
+                    </div>
+                    <div class="countdown-el">
+                        <span id="minutos">00</span>
+                        <label>Minutos</label>
+                    </div>
+                    <div class="countdown-el">
+                        <span id="segundos">00</span>
+                        <label>Segundos</label>
+                    </div>
+                </div>
+                <div id="mensagem-final" class="countdown-mensagem-final">
+                    <p>Feliz Aniversário de Namoro, meu amor! ❤️</p>
                 </div>
             </div>
         </section>
@@ -70,6 +83,48 @@
         <p>Feito com todo o amor do mundo por [Seu Nome].</p>
         <p>© 2025 - Todos os direitos reservados ao nosso amor.</p>
     </footer>
+
+    <script>
+        // --- INÍCIO DA CONFIGURAÇÃO ---
+
+        // IMPORTANTE: Defina a data e hora do seu evento aqui!
+        // Formato: Mês (em inglês, 3 letras), Dia, Ano, Hora:Minuto:Segundo
+        // Exemplo: "Sep 23, 2025 20:00:00" para 23 de Setembro de 2025 às 20:00
+        const dataAlvo = "Sep 23, 2025 00:01:00";
+
+        // --- FIM DA CONFIGURAÇÃO ---
+
+        const diasEl = document.getElementById('dias');
+        const horasEl = document.getElementById('horas');
+        const minutosEl = document.getElementById('minutos');
+        const segundosEl = document.getElementById('segundos');
+        const countdownContainer = document.getElementById('countdown');
+        const mensagemFinal = document.getElementById('mensagem-final');
+
+        const contagem = setInterval(() => {
+            const dataFinal = new Date(dataAlvo).getTime();
+            const agora = new Date().getTime();
+            const distancia = dataFinal - agora;
+
+            if (distancia < 0) {
+                clearInterval(contagem);
+                countdownContainer.style.display = 'none';
+                mensagemFinal.style.display = 'block';
+                return;
+            }
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            diasEl.innerText = dias < 10 ? '0' + dias : dias;
+            horasEl.innerText = horas < 10 ? '0' + horas : horas;
+            minutosEl.innerText = minutos < 10 ? '0' + minutos : minutos;
+            segundosEl.innerText = segundos < 10 ? '0' + segundos : segundos;
+
+        }, 1000);
+    </script>
 
 </body>
 </html>

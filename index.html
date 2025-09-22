@@ -17,6 +17,27 @@
         <div class="hero-content">
             <h1 class="hero-title">1 Ano de Nós</h1>
             <p class="hero-subtitle">Uma jornada de amor que está apenas começando.</p>
+            
+            <div class="hero-stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="365">0</span>
+                    <span class="stat-label">Dias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Meses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="52">0</span>
+                    <span class="stat-label">Semanas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8760">0</span>
+                    <span class="stat-label">Horas</span>
+                </div>
+            </div>
+            <p class="stats-conclusion">... ao seu lado, minha linda!</p>
+            
             <a href="#inicio" class="hero-button">Relembre nossa história</a>
         </div>
     </header>
@@ -34,7 +55,7 @@
     <main id="inicio">
         <section class="intro-section">
             <div class="container fade-in">
-                <h2>Para [Nome da Pessoa Amada],</h2>
+                <h2>Para Minha Giselle, o amor da minha vida!</h2>
                 <p>
                     Há um ano, nossas vidas se cruzaram de uma forma que eu jamais poderia imaginar. Este site é um pequeno presente para celebrar cada risada, cada abraço e cada momento que construímos juntos. É um reflexo do meu amor por você e da felicidade que você trouxe para os meus dias.
                 </p>
@@ -72,9 +93,30 @@
     </main>
 
     <footer>
-        <p>Feito com todo o amor do mundo por [Seu Nome].</p>
-        <p>&copy; 2025 - Todos os direitos reservados ao nosso amor.</p>
+        <p>Feito com todo o amor do mundo por Victor.</p>
+        <p>© 2025 - Todos os direitos reservados ao nosso amor.</p>
     </footer>
+
+    <script>
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200; // Ajuste a velocidade da animação
+
+        counters.forEach(counter => {
+            const animate = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+
+                if (count < target) {
+                    counter.innerText = count + increment;
+                    setTimeout(animate, 10);
+                } else {
+                    counter.innerText = target.toLocaleString('pt-BR');
+                }
+            }
+            animate();
+        });
+    </script>
 
 </body>
 </html>

@@ -168,6 +168,11 @@ footer {
 .hero-content { animation: fadeIn 2s 0.5s ease-in-out forwards; opacity: 0; }
 .hero-title { font-size: 5rem; margin-bottom: 0.5rem; }
 .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; }
+.hero-stats-container { display: flex; justify-content: center; gap: 30px; margin: 1rem 0 0.5rem 0; flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-number { font-family: var(--font-headings); font-size: 2.5rem; font-weight: 700; color: var(--primary-color); display: block; }
+.stat-label { font-size: 0.9rem; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
+.stats-conclusion { font-style: italic; color: #ddd; margin-bottom: 2rem; }
 .hero-button {
     display: inline-block;
     padding: 12px 28px;
@@ -201,14 +206,24 @@ footer {
 /* --- Linha do Tempo (nossa-historia.html) --- */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
 .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--primary-color); top: 0; bottom: 0; left: 50%; margin-left: -2px; opacity: 0.2; }
-.timeline-item { padding: 10px 40px; position: relative; width: 50%; animation: fadeIn 1s ease-out forwards; }
+.timeline-item { padding: 10px 40px; position: relative; width: 50%; }
 .timeline-item:nth-child(odd) { left: 0; }
 .timeline-item:nth-child(even) { left: 50%; }
-.timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--background-color); border: 4px solid var(--primary-color); top: 25px; border-radius: 50%; z-index: 1; }
+.timeline-item::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--background-color); border: 4px solid var(--primary-color); top: 25px; border-radius: 50%; z-index: 1; transition: transform var(--transition-speed); }
 .timeline-item:nth-child(even)::after { left: -10px; }
+.timeline-item:hover::after { transform: scale(1.2); } /* ANIMAÇÃO NOVA */
 .timeline-content { padding: 20px 30px; background-color: var(--dark-color); position: relative; border-radius: 8px; }
 .timeline-content h2 { font-size: 2rem; }
-.timeline-content img { width: 100%; border-radius: 6px; margin: 15px 0; }
+.timeline-content .timeline-image { /* ANIMAÇÃO NOVA */
+    width: 100%;
+    border-radius: 6px;
+    margin: 15px 0;
+    transition: transform var(--transition-speed), filter var(--transition-speed);
+}
+.timeline-content:hover .timeline-image { /* ANIMAÇÃO NOVA */
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
 .timeline-date { font-weight: bold; color: var(--primary-color); margin-bottom: 10px; display: block; }
 .video-link-card { display: block; position: relative; margin-top: 20px; border-radius: 8px; overflow: hidden; cursor: pointer; background-color: #000; text-decoration: none; color: white; }
 .video-link-card img { width: 100%; display: block; opacity: 0.8; transition: opacity var(--transition-speed), transform var(--transition-speed); }
@@ -238,9 +253,13 @@ footer {
 .motivos-img-principal { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .motivos-img-secundaria { width: 80%; border-radius: 8px; margin-top: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); }
 .img-caption { font-size: 0.9rem; color: #ccc; margin-top: 10px; font-style: italic; }
-.playlist-section { background-color: var(--background-light); }
-.playlist-section h2 { text-align: center; font-size: 2.8rem; margin-bottom: 40px; }
-.playlist-container { max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.countdown-section { background-color: var(--background-light); }
+.countdown-section h2 { text-align: center; font-size: 2.8rem; margin-bottom: 40px; }
+.countdown-container { display: flex; justify-content: center; align-items: center; gap: 20px; text-align: center; }
+.countdown-el { background-color: var(--dark-color); padding: 20px; border-radius: 8px; min-width: 120px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.countdown-el span { display: block; font-family: var(--font-headings); font-size: 4rem; font-weight: bold; color: var(--primary-color); }
+.countdown-el label { font-size: 1rem; color: #ccc; text-transform: uppercase; letter-spacing: 1px; }
+.countdown-mensagem-final { display: none; text-align: center; font-family: var(--font-headings); font-size: 2.5rem; color: var(--primary-color); }
 
 /* --- Futuro (futuro.html) --- */
 .dreams-container { display: flex; align-items: center; gap: 50px; }
@@ -271,4 +290,7 @@ footer {
     .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; }
     .timeline-item:nth-child(even) { left: 0; }
     .timeline-item::after { left: 10px; }
+    .countdown-container { flex-wrap: wrap; }
+    .countdown-el { min-width: 100px; padding: 15px;}
+    .countdown-el span { font-size: 3rem; }
 }
