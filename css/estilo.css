@@ -29,7 +29,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.7;
-    /* REMOVIDO: overflow-x: hidden; - para não mascarar problemas de layout */
 }
 
 .container {
@@ -220,6 +219,7 @@ footer {
     padding: 15px 25px;
     margin-bottom: 40px;
     text-align: left;
+    max-width: 100%; /* Garante que não ultrapasse a largura do contêiner */
 }
 #dedication-text {
     font-family: var(--font-headings);
@@ -231,6 +231,7 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
+    max-width: 100%; /* Garante que o texto digitado não cause overflow */
 }
 .intro-section p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 1rem auto; }
 .highlights-section { background-color: var(--background-light); }
@@ -277,13 +278,12 @@ footer {
 .timeline-content h2 { font-size: 2rem; }
 .timeline-content .timeline-image {
     width: 100%;
-    /* Ajuste para garantir que a imagem não seja cortada e preencha o espaço */
     max-width: 100%; 
-    height: auto; /* Garante que a proporção da imagem seja mantida */
+    height: auto;
     border-radius: 6px;
     margin: 15px 0;
     transition: transform var(--transition-speed), filter var(--transition-speed);
-    display: block; /* Garante que ela se comporte como um bloco para margin auto funcionar */
+    display: block;
 }
 .timeline-content:hover .timeline-image {
     transform: scale(1.03);
@@ -345,8 +345,8 @@ footer {
 .motivos-images-wrapper { flex: 1; text-align: center; }
 .motivos-img-principal, .motivos-img-secundaria {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    max-width: 100%; /* Garante que não ultrapasse o contêiner */
-    height: auto; /* Mantém a proporção */
+    max-width: 100%; 
+    height: auto;
 }
 .motivos-img-principal:hover, .motivos-img-secundaria:hover {
     transform: scale(1.03) rotate(1deg);
@@ -374,12 +374,12 @@ footer {
 .dreams-image-wrapper { flex: 1; }
 .dreams-image-wrapper img {
     width: 100%; 
-    max-width: 100%; /* Garante que a imagem não transborde */
-    height: auto; /* Mantém a proporção */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     display: block;
-    margin: 0 auto; /* Centraliza a imagem no wrapper */
+    margin: 0 auto;
 }
 .time-capsule-section { background-color: var(--background-light); }
 .time-capsule-section h2 { text-align: center; }
@@ -406,14 +406,14 @@ footer {
         margin-top: 40px;
     }
     .motivos-img-secundaria {
-        width: 100%; /* Ajuste para preencher a largura total em telas menores */
+        width: 100%;
     }
 }
 
 /* CELULARES GRANDES E TABLETS NA VERTICAL */
 @media (max-width: 768px) {
     section {
-        padding: 80px 20px; /* Reduz padding vertical e adiciona lateral */
+        padding: 80px 20px;
     }
     
     .hero-subtitle { font-size: 1.2rem; }
@@ -422,7 +422,7 @@ footer {
     #dedication-text { font-size: 1.5rem; }
 
     h2, .page-header h1, .highlights-section h2, .invitation-content h2 {
-        font-size: clamp(2rem, 7vw, 2.5rem); /* Fonte Fluída para todos os H2 */
+        font-size: clamp(2rem, 7vw, 2.5rem);
         line-height: 1.2;
     }
     
@@ -452,13 +452,13 @@ footer {
 /* CELULARES PEQUENOS */
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px; /* Reduz ainda mais o padding lateral */
+        padding: 0 15px;
     }
     .hero-stats-container {
         gap: 15px;
     }
     .stat-item {
-        flex-basis: 40%; /* Faz os contadores ficarem em duas colunas */
+        flex-basis: 40%;
     }
     .stat-number {
         font-size: 1.8rem;
@@ -470,15 +470,15 @@ footer {
         font-size: 1rem;
     }
     .countdown-el {
-        flex-basis: 45%; /* Contagem em duas colunas */
+        flex-basis: 45%;
         min-width: auto;
     }
     .motivos-list li {
-        padding-left: 50px; /* Ajuste para o número do motivo */
+        padding-left: 50px;
         font-size: 1rem;
     }
     .motivos-list li::before {
-        font-size: 2rem; /* Ajuste do tamanho do número */
+        font-size: 2rem;
     }
 }
 
@@ -486,11 +486,11 @@ footer {
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
         padding: 20px;
-        height: auto; /* Permite que o hero se ajuste à altura do conteúdo */
-        min-height: 100vh; /* Garante que ainda ocupe a tela inteira se houver espaço */
+        height: auto;
+        min-height: 100vh;
     }
     .hero-content {
-        padding: 40px 0; /* Adiciona um pouco de espaço para não grudar */
+        padding: 40px 0;
     }
     .hero-title {
         font-size: 2.5rem;
@@ -515,10 +515,9 @@ footer {
         font-size: 0.9rem;
     }
     .scroll-down-arrow {
-        display: none; /* Esconde a seta em telas baixas */
+        display: none;
     }
 
-    /* Ajuste para navegação em paisagem */
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -528,7 +527,6 @@ footer {
         margin: 5px 8px;
         font-size: 0.9rem;
     }
-    /* Reduz o padding das seções para otimizar o espaço vertical */
     section {
         padding: 40px 20px;
     }
