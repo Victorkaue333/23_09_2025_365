@@ -1,35 +1,36 @@
-Projeto Para Bebêle Como Presente de Aniversário de Namoro.
+💖 Projeto “Para Bebêle” – Presente de Aniversário de Namoro
 
-Um projeto pessoal e especial, criado com muito carinho para celebrar um momento importante meu e da minha "Bebêle", marcado para 23 de setembro de 2025.
+Este é um projeto pessoal e muito especial, criado com todo carinho para celebrar um momento importante da minha vida: 1 ano de namoro com a minha Bebêle, comemorado em 23 de setembro de 2025.
 
-O site possue como intuito expressar por meio de linhas de código todo o amor contido em um período de tempo de 1 Ano de Namoro.
+O intuito deste site é transformar, por meio de linhas de código, todo o amor vivido ao longo desse primeiro ano juntos — registrando memórias, sentimentos, sonhos e tudo aquilo que torna nossa história única.
 
-🚀 Acesso ao Site (Deploy)
+🚀 Acesso ao Site
 
-Você pode visitar o site e vê-lo em funcionamento através do link:
+Você pode acessar o projeto diretamente pelo link abaixo:
 
-https://para-bebele-23-09-2025.netlify.app/
-
-📸 Visualização
+🔗 https://para-bebele-23-09-2025.netlify.app/
 
 
-✨ Principais Funcionalidades:
+✨ Funcionalidades Principais
 
-Contagem Regressiva: Um contador celebrando o tempo juntos.
+⏳ Contagem Regressiva: marca quanto tempo falta para a data especial.
 
-Nossa História: Uma linha do tempo ou descrição do início do relacionamento.
+💞 Nossa História: uma linha do tempo contando como tudo começou.
 
-Galeria: Uma galeria de fotos com momentos do casal.
+📷 Galeria: fotos marcantes e momentos importantes do nosso relacionamento.
 
-Motivos (Por que Eu Te Amo?): Uma seção dedicada a listar motivos de carinho.
+🌟 Motivos “Por Que Eu Te Amo?” uma lista carinhosa de motivos especiais.
 
-Nosso Futuro: Uma página sobre os planos e sonhos futuros do casal.
+🌈 Nosso Futuro: página sobre planos, metas e sonhos ao lado da minha Bebêle.
 
 💻 Tecnologias Utilizadas
 
-Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+Este projeto foi desenvolvido com:
 
 HTML5
+
 CSS3
+
 JavaScript
+
 Hospedagem: Netlify
